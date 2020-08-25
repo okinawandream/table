@@ -1,0 +1,22 @@
+body {
+  width: 600px;
+  user-select: none;
+  background: #a9cc51;
+  margin: 50px;
+}
+
+.run {
+  margin: 20px;
+}
+
+ul {
+  list-style: none;
+}
+
+input {
+  margin: 15px;
+}
+
+label {
+  margin: 15px;
+}
