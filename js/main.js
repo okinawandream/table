@@ -1,15 +1,24 @@
 'use strict';
 
 {
-  let table = document.getElementById('targetTable');//HTMLで用意したtableを取得する
-  let newRow = table.insertRow();  //取得したtableにinsertRow()メソッドで1行追加。追加した行を newRow という変数に格納
+  let text = document.getElementById('text');//入力フォーム部品
+  const button = document.getElementById('Add');//追加ボタン
+  const table = document.getElementById('targetTable');//HTMLで用意したtableを取得する
+  
+  button.addEventListener('click', () => {
+    let newRow = table.insertRow(); 
+    let newCell = newRow.insertCell();
+    let newText = document.createTextNode(`${text.value}`);
+    newCell.appendChild(newText);
 
-  let newCell = newRow.insertCell();//追加した行に対して、insertCell()メソッドでセルを作成。
-  let newText = document.createTextNode('山田');
-  newCell.appendChild(newText);
+    const done = document.createElement('button');
+    done.textContent = '完了';
+    
+    newCell = newRow.insertCell();//追加した行に対して、insertCell()メソッドでセルを作成
+    newText = document.createTextNode(`${done}`);
+    newCell.appendChild(done);//作成したテキストをnewCellに追加
 
-  newCell = newRow.insertCell();
-  newText = document.createTextNode(18);
-  newCell.appendChild(newText);
- 
+    text.value = '';
+    text.focus();
+  });
 }
